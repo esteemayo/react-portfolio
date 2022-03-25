@@ -1,0 +1,21 @@
+$mainColor: #15023a;
+$colorWhite: #fff;
+
+$bp-sm: 30em;
+$bp-md-1: 30.1em;
+$bp-md-2: 48em;
+$bp-lg-1: 48.1em;
+$bp-lg-2: 79.94em;
+$bp-lgst: 80em;
+
+@mixin mobile {
+  @media only screen and (max-width: #{$bp-sm}) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media only screen and (max-width: #{$bp-md-2}) {
+    @content;
+  }
+}

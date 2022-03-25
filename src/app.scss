@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.app {
+  height: 100vh;
+
+  &__sections {
+    width: 100%;
+    height: calc(100vh - 7rem);
+    position: relative;
+    top: 7rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; // for firefox
+
+    &::-webkit-scrollbar {
+      display: none; // for chrome,edge,safari,mozilla
+    }
+
+    & > * {
+      width: 100vw;
+      height: calc(100vh - 7rem);
+      scroll-snap-align: start;
+    }
+  }
+}

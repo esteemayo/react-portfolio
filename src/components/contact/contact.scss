@@ -1,0 +1,125 @@
+@import '../../global.scss';
+
+.contact {
+  background-color: $colorWhite;
+  display: flex;
+
+  @include tab {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+
+  .left {
+    flex: 1;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .right {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      font-size: 3rem;
+      text-transform: capitalize;
+
+      @include tab {
+        font-size: 2.5rem;
+      }
+    }
+
+    form {
+      width: 70%;
+      height: 70%;
+      color: #999;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      input {
+        width: 30rem;
+        height: 3rem;
+        display: block;
+        font-size: 1.4rem;
+        font-family: inherit;
+        color: inherit;
+        caret-color: $mainColor;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+
+        @include tab {
+          width: 20rem;
+          height: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &::-webkit-input-placeholder {
+          color: #bbb;
+        }
+      }
+
+      textarea {
+        width: 30rem;
+        height: 20rem;
+        font-size: 1.4rem;
+        font-family: inherit;
+        color: inherit;
+        resize: none;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        caret-color: $mainColor;
+
+        @include tab {
+          width: 20rem;
+          height: 10rem;
+          margin-bottom: 2rem;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        border: none;
+        display: block;
+        width: 15rem;
+        height: 3rem;
+        color: $colorWhite;
+        background-color: #dc143c;
+        border-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 1rem 3rem 1rem rgba($color: #333333, $alpha: 0.1);
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      span {
+        font-size: 1.4rem;
+        color: #008000;
+      }
+    }
+  }
+}

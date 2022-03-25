@@ -1,0 +1,30 @@
+@import '../../global.scss';
+
+.menu {
+  width: 30rem;
+  height: 100vh;
+  background-color: $mainColor;
+  position: fixed;
+  top: 0;
+  right: -30rem;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+
+  &.active {
+    right: 0;
+  }
+
+  .list {
+    list-style: none;
+    width: 60%;
+    font-size: 3rem;
+    font-weight: 300;
+    color: $colorWhite;
+  }
+}

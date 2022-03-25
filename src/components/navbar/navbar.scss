@@ -1,0 +1,94 @@
+@import '../../global.scss';
+
+.navbar {
+  width: 100%;
+  height: 7rem;
+  background-color: $colorWhite;
+  color: $mainColor;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+
+  .wrapper {
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      .logo:link,
+      .logo:visited {
+        font-size: 3rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: currentColor;
+        margin-right: 4rem;
+      }
+
+      .item-container {
+        display: flex;
+        align-items: center;
+        margin-left: 3rem;
+
+        @include tab {
+          display: none;
+        }
+
+        .icon {
+          font-size: 1.8rem;
+          margin-right: 0.5rem;
+        }
+
+        span {
+          font-size: 1.5rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .right {
+      .hamburger {
+        width: 3.2rem;
+        height: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      span {
+        width: 100%;
+        height: 3px;
+        background-color: $mainColor;
+        transform-origin: left;
+        -webkit-transition: all 2s ease;
+        transition: all 2s ease;
+      }
+    }
+  }
+  &.active {
+    background-color: $mainColor;
+    color: $colorWhite;
+
+    .hamburger {
+      span {
+        &:first-child {
+          background-color: $colorWhite;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          background-color: $colorWhite;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
